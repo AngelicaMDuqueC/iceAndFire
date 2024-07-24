@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# An Interface of Ice and Fire
+
+## Overview
+An Interface of Ice and Fire is an application built to help fans of the epic series A Song of Ice and Fire track which characters from the series are alive or dead. The application utilizes the API provided by [An API of Ice and Fire](https://anapioficeandfire.com/) to fetch and display information about various houses and their sworn members.
+
+## Features
+- Fetches data from [An API of Ice and Fire](https://anapioficeandfire.com/).
+- Displays a list of houses with their sworn members.
+- For each sworn member, displays their full name and whether they are alive or dead.
+- If a character is dead, displays the information provided by the API about their death.
+- If a house has no sworn members, displays the message "This house has no sworn members".
+
+## Tech Stack
+- **React**: For building the user interface.
+- **Next.js**: For static site generation.
+- **TypeScript**: For type safety.
+- **Jest**: For testing.
+
+## Project Structure
+```plaintext
+.next/
+.swc/
+node_modules/
+public/
+src/
+├── __tests__/
+├── app/
+│   └── house/
+│       ├── layout.tsx
+│       ├── not-found.tsx
+│       └── page.tsx
+├── components/
+│   ├── HouseList.tsx
+│   ├── SwornMemberItem.tsx
+│   └── SwornMemberList.tsx
+├── domain/entities/
+│   ├── houses.ts
+│   └── swornMember.ts
+├── hooks/
+├── serverActions/
+│   ├── fetchHouses.ts
+│   ├── getHouse.ts
+│   └── getSwornMembers.ts
+├── services/
+│   └── houses.service.ts
+├── styles/
+├── utils/
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── jest.config.js
+├── jest.setup.js
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Ensure you have the following installed on your machine:
+- Node.js (>= 14.x)
+- npm (>= 6.x)
 
-```bash
+### Installation
+1. Clone the repository:
+   ```sh
+   git iceAndFire
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd iceAndFire
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running the Application
+To run the application in development mode:
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+The app will be available at [http://localhost:3000](http://localhost:3000).
+
+### Building the Application
+To build the application for production:
+```sh
+npm run build
+```
+The built files will be in the `.next` directory.
+
+### Running Tests
+To run the tests:
+```sh
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+Upon launching the application, you will see a list of houses. Clicking on a house will display its sworn members along with their statuses (alive or dead). If a character is dead, additional information about their death will be displayed. If a house has no sworn members, a message will be displayed indicating that.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for review.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acknowledgements
+- [An API of Ice and Fire](https://anapioficeandfire.com/) for providing the data source.
+- Inspired by the epic series A Song of Ice and Fire.
