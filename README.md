@@ -88,8 +88,15 @@ npm run dev
 ```
 The app will be available at [http://localhost:3000](http://localhost:3000).
 
+## Environment Variables
+Create a ```.env.local``` file in the root of the application and create a variable as follows: 
+
+```sh
+BASE_URL=<URL_anapioficeandfire>
+```
+
 ### Building the Application
-To build the application for production:
+To build the production application:
 ```sh
 npm run build
 ```
